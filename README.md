@@ -1,7 +1,7 @@
 # react-native-splash-screen
 
 
-[![Download](https://img.shields.io/badge/Download-v3.1.1-ff69b4.svg) ](https://www.npmjs.com/package/react-native-splash-screen)
+[![Download](https://img.shields.io/badge/Download-v3.0.9-ff69b4.svg) ](https://www.npmjs.com/package/react-native-splash-screen)
 [ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/crazycodeboy/react-native-splash-screen/pulls)
 [ ![react-native-splash-screen release](https://img.shields.io/github/release/crazycodeboy/react-native-splash-screen.svg?maxAge=2592000?style=flat-square)](https://github.com/crazycodeboy/GitHubPopular/releases)
 [ ![语言 中文](https://img.shields.io/badge/语言-中文-feb252.svg)](https://github.com/crazycodeboy/react-native-splash-screen/blob/master/README.zh.md)
@@ -99,7 +99,7 @@ public class MainApplication extends Application implements ReactApplication {
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `react-native-splash-screen` and add `SplashScreen.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libSplashScreen.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. To fix `'RNSplashScreen.h' file not found`, you have to select your project → Build Settings → Search Paths → Header Search Paths to add:
+4. To fix `'SplashScreen.h' file not found`, you have to select your project → Build Settings → Search Paths → Header Search Paths to add:
 
    `$(SRCROOT)/../node_modules/react-native-splash-screen/ios`
 
@@ -139,7 +139,7 @@ Update `AppDelegate.m` with the following additions:
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "RNSplashScreen.h"  // here
+#import "SplashScreen.h"  // here
 
 @implementation AppDelegate
 
@@ -147,7 +147,7 @@ Update `AppDelegate.m` with the following additions:
 {
     // ...other code
 
-    [RNSplashScreen show];  // here
+    [SplashScreen show];  // here
     return YES;
 }
 
@@ -183,7 +183,7 @@ You can create splash screens in the following folders:
 * `drawable-xxhdpi`
 * `drawable-xxxhdpi`
 
-Add a color called `primary_dark` in `app/src/main/res/values/colors.xml`
+Add a color called `primary_dark` in `app/src/main/res/values/color.xml`
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -264,10 +264,10 @@ export default class WelcomePage extends Component {
 ## API
 
 
-| Method | Type     | Optional | Description                         |
-|--------|----------|----------|-------------------------------------|
-| show() | function | false    | Open splash screen (Native Method ) |
-| hide() | function | false    | Close splash screen                 |
+Method            | Type     | Optional | Description
+----------------- | -------- | -------- | -----------
+show()   | function | false | Open splash screen (Native Method )
+hide() |  function  | false  |  Close splash screen     
 
 ## Testing
 
